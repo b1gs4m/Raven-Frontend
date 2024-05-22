@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__logo">
+        <img src="public/img/navLogo.png" alt="Sisyphus" class="logo__image" />
+        <img
+          src="public/img/divider.png"
+          alt="Sisyphus"
+          class="logo__divider"
+        />
+      </div>
+      <nav class="header__nav nav">
+          <a href="index.html" class="nav__link nav--active">Dashboard</a>
+          <a href="index.html" class="nav__link">Market</a>
+          <a href="index.html" class="nav__link">Wallet</a>
+          <a href="profile.html" class="nav__link">Profile</a>
+      </nav>
+      <div class="header__search search-bar">
+          <input type="text" placeholder="Search..." class="search-bar__input" />
+      </div>
+      <div class="header__hamburger hamburger-menu">
+        <div class="hamburger-menu__icon"></div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="chart-section">
+        <div id="container" class="chart-section__chart">
+          <!-- Financial candlestick chart will go here -->
+        </div>
+      </section>
+      <aside class="order-book">
+        <h2 class="order-book__title">Order Book</h2>
+        <!-- Order book content -->
+      </aside>
+      <section class="trading-section">
+        <h2 class="trading-section__title">Trade</h2>
+        <form id="trade-form" class="trading-section__form">
+          <label for="price" class="trading-section__label">Price:</label>
+          <input
+            type="number"
+            id="price"
+            name="price"
+            class="trading-section__input"
+          />
+
+          <label for="amount" class="trading-section__label">Amount:</label>
+          <input
+            type="number"
+            id="amount"
+            name="amount"
+            class="trading-section__input"
+          />
+
+          <label for="total" class="trading-section__label">Total:</label>
+          <input
+            type="number"
+            id="total"
+            name="total"
+            readonly
+            class="trading-section__input"
+          />
+
+          <button type="submit" class="trading-section__button">Buy BTC</button>
+        </form>
+      </section>
+    </main>
+
+    <footer
+      class="footer footer--background footer--rounded footer--shadow margin--medium"
+    >
+      <div class="footer__container">
+        <div class="footer__top">
+          <a href="#" class="footer__logo-link">
+            <img
+              src="public/img/navLogo.png"
+              class="footer__logo"
+              alt="sisyphus Logo"
+            />
+          </a>
+          <ul class="footer__links">
+            <li class="footer__link-item">
+              <a href="#" class="footer__link">About</a>
+            </li>
+            <li class="footer__link-item">
+              <a href="#" class="footer__link">Privacy Policy</a>
+            </li>
+            <li class="footer__link-item">
+              <a href="#" class="footer__link">Licensing</a>
+            </li>
+            <li class="footer__link-item">
+              <a href="#" class="footer__link">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <span class="footer__text">
+          © 2023
+          <a href="https://sisyphus.com/" class="footer__text-link">Sisyphus™</a
+          >. All Rights Reserved.</span
+        >
+      </div>
+    </footer>
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-bundle.min.js"></script>
+    <script>
+      const hamburgerMenu = document.querySelector(".hamburger-menu");
+      const navLinks = document.querySelector(".nav");
+
+      hamburgerMenu.addEventListener("click", () => {
+        navLinks.classList.toggle("nav--active");
+      });
+    </script>
+    <script src="js/cande-chart.js"></script>
+  </body>
+</html>

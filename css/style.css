@@ -1,0 +1,312 @@
+/* base styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1e1e2d;
+  color: #c4c4c9;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* header styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #2c2c2c;
+  color: white;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo__image {
+  height: 40px;
+}
+
+.logo__divider {
+  height: 40px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav__link {
+  color: rgba(167, 177, 188, 1);
+  text-decoration: none;
+}
+.nav--active {
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.header__search .search-bar__input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.header__hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger-menu__icon {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+/* responsive styles */
+@media (max-width: 768px) {
+  .header__nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #2c2c2c;
+    width: 100%;
+    text-align: center;
+  }
+
+  .header__nav.nav--active {
+    display: flex;
+  }
+
+  .header__search {
+    display: none;
+  }
+
+  .header__hamburger {
+    display: flex;
+  }
+}
+
+/* main styles */
+.main {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+}
+
+.chart-section,
+.trading-section,
+.order-book {
+  background-color: #2a2a3c;
+  padding: 20px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.chart-section {
+  flex: 3;
+}
+
+.chart-section__chart {
+  /* Chart specific styles can go here */
+}
+
+.order-book {
+  flex: 1;
+}
+
+.order-book__title {
+  margin: 0;
+}
+
+.trading-section {
+  flex: 1;
+}
+
+.trading-section__title {
+  margin: 0;
+}
+
+.trading-section__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.trading-section__label {
+  margin: 10px 0 5px;
+}
+
+.trading-section__input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.trading-section__button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.trading-section__button:hover {
+  background-color: #45a049;
+}
+
+/* footer styles */
+/* Utility classes */
+.margin--medium {
+  margin: 1rem;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #1e1e2d;
+  color: #c4c4c9;
+  border-radius: 0.5rem;
+  /* box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1); */
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.footer--background {
+  background-color: #1e1e2d;
+  color: #c4c4c9;
+}
+
+.footer--rounded {
+  border-radius: 0.5rem;
+}
+
+.footer--shadow {
+  box-shadow: 0 0.25rem 0rem rgba(0, 0, 0, 0.1);
+}
+
+.footer__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.footer__logo-link {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.footer__logo {
+  height: 2rem;
+  margin-right: 0.75rem;
+}
+
+.footer__brand-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #000000;
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.footer__link-item {
+  margin-right: 1.5rem;
+}
+
+.footer__link {
+  color: #6b7280;
+  text-decoration: none;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
+}
+
+.footer__divider {
+  border: 0;
+  border-top: 0.41px solid #5e6677;
+  margin: 4rem 0;
+}
+
+.footer__text {
+  margin-top: 2rem;
+  display: block;
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+.footer__text-link {
+  color: #6b7280;
+  text-decoration: none;
+}
+
+.footer__text-link:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 640px) {
+  .footer__top {
+    flex-direction: row;
+  }
+
+  .footer__logo-link {
+    margin-bottom: 0;
+  }
+
+  .footer__links {
+    margin-bottom: 0;
+  }
+}
+
+/* responsive styles for main sections */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .chart-section,
+  .trading-section,
+  .order-book {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .chart-section,
+  .trading-section,
+  .order-book {
+    flex: none;
+    width: 100%;
+  }
+}
+
+#container {
+  background-color: #2a2a3c;
+  width: 100%;
+  height: 800px; /* Set a fixed height or adjust as needed */
+  margin: 0 auto;
+}
