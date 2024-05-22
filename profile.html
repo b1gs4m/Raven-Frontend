@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/gravatar.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__logo">
+        <img src="public/img/navLogo.png" alt="Sisyphus" class="logo__image" />
+        <img
+          src="public/img/divider.png"
+          alt="Sisyphus"
+          class="logo__divider"
+        />
+      </div>
+      <nav class="header__nav nav">
+        <a href="index.html" class="nav__link">Dashboard</a>
+        <a href="index.html" class="nav__link">Market</a>
+        <a href="index.html" class="nav__link">Wallet</a>
+        <a href="profile.html" class="nav__link nav--active">Profile</a>
+      </nav>
+      <div class="header__search search-bar">
+        <input type="text" placeholder="Search..." class="search-bar__input" />
+      </div>
+      <div class="header__hamburger hamburger-menu">
+        <div class="hamburger-menu__icon"></div>
+      </div>
+    </header>
+
+    <div class="auth">
+      <div class="auth__container">
+        <h1 class="auth__title">Gravatar</h1>
+        <form class="auth__form" id="auth-form">
+          <label for="email" class="auth__label">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="auth__input"
+            required
+          />
+          <button type="submit" class="auth__button">Submit</button>
+        </form>
+        <div class="auth__result" id="result">
+          <img id="gravatar" class="auth__gravatar" src="" alt="Gravatar" />
+          <div id="repositories" class="auth__repositories"></div>
+        </div>
+      </div>
+    </div>
+    <script src="js/gravatar.js"></script>
+    <footer
+      class="footer footer--background footer--rounded footer--shadow margin--medium"
+    >
+      <div class="footer__container">
+        <div class="footer__top">
+          <a href="https://sisyphus.com/" class="footer__logo-link">
+            <img
+              src="public/img/navLogo.png"
+              class="footer__logo"
+              alt="sisyphus Logo"
+            />
+          </a>
+          <ul class="footer__links">
+            <li class="footer__link-item">
+              <a href="#" class="footer__link">About</a>
+            </li>
+            <li class="footer__link-item">
+              <a href="#" class="footer__link">Privacy Policy</a>
+            </li>
+            <li class="footer__link-item">
+              <a href="#" class="footer__link">Licensing</a>
+            </li>
+            <li class="footer__link-item">
+              <a href="#" class="footer__link">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <span class="footer__text">
+          © 2023
+          <a href="#" class="footer__text-link">Sisyphus™</a>. All Rights
+          Reserved.</span
+        >
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+
+    <script>
+      const hamburgerMenu = document.querySelector(".hamburger-menu");
+      const navLinks = document.querySelector(".nav");
+
+      hamburgerMenu.addEventListener("click", () => {
+        navLinks.classList.toggle("nav--active");
+      });
+    </script>
+  </body>
+</html>
